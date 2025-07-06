@@ -328,12 +328,214 @@ const defaultSiteImages = {
   backgroundImages: [],
 };
 
+const defaultMugProducts = [
+  {
+    name: "Sublimation Mug (White Inner)",
+    image: "https://images.pexels.com/photos/3932951/pexels-photo-3932951.jpeg",
+    basePrice: 600,
+    category: "Sublimation",
+    variants: ["11oz", "15oz"],
+    priceData: {
+      tier1: { min: 1, max: 3, price: 600 },
+      tier2: { min: 4, max: 6, price: 550 },
+      tier3: { min: 10, max: 999, price: 500 },
+    },
+  },
+  {
+    name: "Sublimation Mug (Colored Inner+Handle)",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F51336b8f313240f88ea592f27ea65109?format=webp&width=800",
+    basePrice: 800,
+    category: "Sublimation",
+    variants: [
+      {
+        name: "11oz - Red Inner",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F51336b8f313240f88ea592f27ea65109?format=webp&width=800",
+      },
+      {
+        name: "11oz - Black Inner",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F0a0b26ddf1974ba7be481c3897e383a6?format=webp&width=800",
+      },
+      {
+        name: "11oz - Green Inner",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2Fce256536223141d98be0ca2b249d429d?format=webp&width=800",
+      },
+      {
+        name: "15oz - Yellow Inner",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F529691f7adf940ae81b18103f1769fc5?format=webp&width=800",
+      },
+    ],
+    priceData: {
+      tier1: { min: 1, max: 3, price: 800 },
+      tier2: { min: 4, max: 6, price: 750 },
+      tier3: { min: 10, max: 999, price: 700 },
+    },
+  },
+  {
+    name: "Patch Mug (Black with Custom Printing)",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F22a3aa55c28b4dc28efcf142f1a5a4f0?format=webp&width=800",
+    basePrice: 1200,
+    category: "Sublimation",
+    variants: ["Standard 11oz", "Large 15oz"],
+    priceData: {
+      tier1: { min: 1, max: 3, price: 1200 },
+      tier2: { min: 4, max: 6, price: 1150 },
+      tier3: { min: 10, max: 999, price: 1100 },
+    },
+  },
+];
+const defaultTshirtProducts = [
+  {
+    name: "T-Shirt White (Jersey)",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F6dfa405e89e843fca47a17615cfc40e3?format=webp&width=800",
+    basePrice: 400,
+    category: "Apparel",
+    variants: ["S", "M", "L", "XL", "XXL"],
+    priceData: {
+      tier1: { min: 1, max: 10, price: 400 },
+      tier2: { min: 11, max: 50, price: 350 },
+      tier3: { min: 51, max: 999, price: 300 },
+    },
+  },
+  {
+    name: "T-Shirt Colored (Cotton/Polo)",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F5d8c378ff2914d5dba91e7d6a29255cb?format=webp&width=800",
+    basePrice: 500,
+    category: "Apparel",
+    variants: [
+      {
+        name: "Black - S",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F5d8c378ff2914d5dba91e7d6a29255cb?format=webp&width=800",
+      },
+      {
+        name: "Blue - M",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F5d8c378ff2914d5dba91e7d6a29255cb?format=webp&width=800",
+      },
+      {
+        name: "Green - L",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F5d8c378ff2914d5dba91e7d6a29255cb?format=webp&width=800",
+      },
+      {
+        name: "Red - XL",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F5d8c378ff2914d5dba91e7d6a29255cb?format=webp&width=800",
+      },
+    ],
+    priceData: {
+      tier1: { min: 1, max: 10, price: 500 },
+      tier2: { min: 11, max: 50, price: 450 },
+      tier3: { min: 51, max: 999, price: 400 },
+    },
+  },
+  {
+    name: "Polo Shirts (Multiple Colors)",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F7de49859ef554a0d8f16dc60e0e218d1?format=webp&width=800",
+    basePrice: 600,
+    category: "Apparel",
+    variants: [
+      {
+        name: "Navy - S",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F7de49859ef554a0d8f16dc60e0e218d1?format=webp&width=800",
+      },
+      {
+        name: "Black - M",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F7de49859ef554a0d8f16dc60e0e218d1?format=webp&width=800",
+      },
+      {
+        name: "White - L",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F7de49859ef554a0d8f16dc60e0e218d1?format=webp&width=800",
+      },
+    ],
+    priceData: {
+      tier1: { min: 1, max: 10, price: 600 },
+      tier2: { min: 11, max: 50, price: 550 },
+      tier3: { min: 51, max: 999, price: 500 },
+    },
+  },
+];
+const defaultWristbandProducts = [
+  {
+    name: "Silicone Wristband (Printed)",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F8260e4adb06745cdbdbdb39461d211b6?format=webp&width=800",
+    basePrice: 50,
+    category: "Wristbands",
+    variants: [
+      {
+        name: "Green",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2Fa279cb1794f443299a97db13e9ef012f?format=webp&width=800",
+      },
+      {
+        name: "Red",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F15d9b2f63fc54e4dba1f7e7255c44f07?format=webp&width=800",
+      },
+      {
+        name: "Blue",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F1320cec0ec12409ea4449f23c77b28bf?format=webp&width=800",
+      },
+      {
+        name: "Black",
+        image:
+          "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F6e2b0bbda91b46af9895084b03db1bde?format=webp&width=800",
+      },
+    ],
+    priceData: {
+      tier1: { min: 100, max: 500, price: 50 },
+      tier2: { min: 100, max: 500, price: 25 },
+      tier3: { min: 500, max: 1000, price: 20 },
+    },
+    specialPricing: {
+      nonPrintedSingle: 30,
+    },
+  },
+  {
+    name: "Event Non-Tear Bands",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F8260e4adb06745cdbdbdb39461d211b6?format=webp&width=800",
+    basePrice: 20,
+    category: "Event Bands",
+    variants: ["Standard", "VIP", "Security"],
+    priceData: {
+      tier1: { min: 1000, max: 1000, price: 20 },
+      tier2: { min: 1000, max: 1000, price: 20 },
+      tier3: { min: 1000, max: 1000, price: 20 },
+    },
+  },
+];
+
 export default function Index() {
   const [siteImages, setSiteImages] = useState(defaultSiteImages);
+  const [mugProducts, setMugProducts] = useState(defaultMugProducts);
+  const [tshirtProducts, setTshirtProducts] = useState(defaultTshirtProducts);
+  const [wristbandProducts, setWristbandProducts] = useState(defaultWristbandProducts);
   useEffect(() => {
     const savedImages = localStorage.getItem("adminSiteImages");
     if (savedImages) {
       setSiteImages(JSON.parse(savedImages));
+    }
+    const savedProducts = localStorage.getItem("adminProducts");
+    if (savedProducts) {
+      const allProducts = JSON.parse(savedProducts);
+      setMugProducts(allProducts.filter(p => p.category === "Sublimation"));
+      setTshirtProducts(allProducts.filter(p => p.category === "Apparel"));
+      setWristbandProducts(allProducts.filter(p => p.category === "Wristbands"));
     }
   }, []);
 
