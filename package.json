@@ -21,6 +21,9 @@
     "format.fix": "prettier --write .",
     "typecheck": "tsc"
   },
+  "static-build": {
+    "distDir": "dist/spa"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "zod": "^3.23.8"
