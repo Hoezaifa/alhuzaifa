@@ -15,6 +15,7 @@ import {
   Users,
   Clock,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 // All Mug Products (Sublimation)
 const mugProducts = [
@@ -316,7 +317,26 @@ const stats = [
   { number: "24h", label: "Average Turnaround" },
 ];
 
+const defaultSiteImages = {
+  logo: "https://cdn.builder.io/api/v1/assets/ea61dcf4d4424dd79aa5d25b8d2c102b/alhuzaifa-logo-c3ac64?format=webp&width=800",
+  heroImages: [
+    "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F51336b8f313240f88ea592f27ea65109?format=webp&width=800",
+    "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F6dfa405e89e843fca47a17615cfc40e3?format=webp&width=800",
+    "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F22a3aa55c28b4dc28efcf142f1a5a4f0?format=webp&width=800",
+    "https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F8260e4adb06745cdbdbdb39461d211b6?format=webp&width=800",
+  ],
+  backgroundImages: [],
+};
+
 export default function Index() {
+  const [siteImages, setSiteImages] = useState(defaultSiteImages);
+  useEffect(() => {
+    const savedImages = localStorage.getItem("adminSiteImages");
+    if (savedImages) {
+      setSiteImages(JSON.parse(savedImages));
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
       <Header />
@@ -396,24 +416,24 @@ export default function Index() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F51336b8f313240f88ea592f27ea65109?format=webp&width=800"
+                  src={siteImages.heroImages[0] || defaultSiteImages.heroImages[0]}
                   alt="Custom Mug"
                   className="w-full h-40 object-cover rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 />
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F6dfa405e89e843fca47a17615cfc40e3?format=webp&width=800"
+                  src={siteImages.heroImages[1] || defaultSiteImages.heroImages[1]}
                   alt="Custom T-Shirt"
                   className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 />
               </div>
               <div className="space-y-4 mt-8">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F22a3aa55c28b4dc28efcf142f1a5a4f0?format=webp&width=800"
+                  src={siteImages.heroImages[2] || defaultSiteImages.heroImages[2]}
                   alt="Patch Mug"
                   className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 />
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fea61dcf4d4424dd79aa5d25b8d2c102b%2F8260e4adb06745cdbdbdb39461d211b6?format=webp&width=800"
+                  src={siteImages.heroImages[3] || defaultSiteImages.heroImages[3]}
                   alt="Custom Wristbands"
                   className="w-full h-40 object-cover rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 />
@@ -721,7 +741,7 @@ export default function Index() {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <img
-                src="https://cdn.builder.io/api/v1/assets/ea61dcf4d4424dd79aa5d25b8d2c102b/alhuzaifa-logo-c3ac64?format=webp&width=800"
+                src={siteImages.logo || defaultSiteImages.logo}
                 alt="Al Huzaifa Printers Logo"
                 className="h-8 w-auto filter brightness-0 invert"
               />
