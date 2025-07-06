@@ -7,10 +7,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
@@ -40,9 +42,10 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a
-            href="#home"
+          <div
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity cursor-pointer"
+            onClick={() => window.location.href = "/"}
+            style={{ userSelect: "none" }}
           >
             <img
               src="https://cdn.builder.io/api/v1/assets/ea61dcf4d4424dd79aa5d25b8d2c102b/alhuzaifa-logo-c3ac64?format=webp&width=800"
@@ -57,16 +60,16 @@ export default function Header() {
                 Digital Printing Solutions
               </p>
             </div>
-          </a>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
-              className="text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors"
+            <span
+              className="text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors cursor-pointer"
+              onClick={() => window.location.href = "/"}
             >
               Home
-            </a>
+            </span>
 
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors focus:outline-none">
@@ -181,13 +184,15 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
             <nav className="flex flex-col space-y-3">
-              <a
-                href="#home"
-                className="text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              <span
+                className="text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors cursor-pointer"
+                onClick={() => {
+                  window.location.href = "/";
+                  setIsMenuOpen(false);
+                }}
               >
                 Home
-              </a>
+              </span>
 
               <div className="space-y-2">
                 <div className="text-gray-700 dark:text-gray-300 font-medium">
